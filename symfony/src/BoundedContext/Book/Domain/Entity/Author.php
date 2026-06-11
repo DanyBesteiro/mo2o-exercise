@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Book\Domain\Entity;
+namespace App\BoundedContext\Book\Domain\Entity;
 
 final class Author
 {

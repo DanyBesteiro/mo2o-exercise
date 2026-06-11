@@ -2,22 +2,28 @@
 
 declare(strict_types=1);
 
-namespace App\Book\Domain\Entity;
+namespace App\BoundedContext\Book\Domain\Entity;
+
+use Symfony\Component\Uid\Uuid;
+
 
 final class Book
 {
+    private Uuid $id;
+
     /**
      * @param Author[] $authors
      * @param string[] $subjects
      */
     public function __construct(
-        private readonly int $id,
         private readonly string $title,
         private readonly array $subjects,
         private readonly array $authors
-    ) {}
+    ) {
+        $this->id = Uuid::v4();
+    }
 
-    public function id(): int
+    public function id(): Uuid
     {
         return $this->id;
     }
