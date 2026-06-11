@@ -25,7 +25,7 @@ class BookTest extends TestCase
         );
 
         $this->assertNotEmpty($book->id());
-        $this->assertTrue(\Symfony\Component\Uid\Uuid::isValid($book->id()));
+        $this->assertTrue(\Symfony\Component\Uid\Uuid::isValid($book->id()->toRfc4122()));
         $this->assertSame('Pride and Prejudice', $book->title());
         $this->assertSame($subjects, $book->subjects());
 
