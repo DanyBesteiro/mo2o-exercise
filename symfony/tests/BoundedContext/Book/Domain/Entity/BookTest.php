@@ -19,13 +19,13 @@ class BookTest extends TestCase
         $subjects = ['Romance', 'Classic'];
 
         $book = new Book(
+            1,
             'Pride and Prejudice',
             $subjects,
             $authors
         );
 
-        $this->assertNotEmpty($book->id());
-        $this->assertTrue(\Symfony\Component\Uid\Uuid::isValid($book->id()->toRfc4122()));
+        $this->assertSame(1, $book->id());
         $this->assertSame('Pride and Prejudice', $book->title());
         $this->assertSame($subjects, $book->subjects());
 
@@ -38,6 +38,7 @@ class BookTest extends TestCase
         $this->expectException(\TypeError::class);
 
         new Book(
+            null,
             null,
             [],
             []
