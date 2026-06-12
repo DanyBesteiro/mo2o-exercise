@@ -40,6 +40,7 @@ final class GutendexRepository implements BookRepositoryInterface
             return null;
         }
 
+        /** @var array{id: int, title: string, subjects: array<string>, authors: array<int, array{name: string}>} $response */
         return new Book(
             $response['id'],
             $response['title'],

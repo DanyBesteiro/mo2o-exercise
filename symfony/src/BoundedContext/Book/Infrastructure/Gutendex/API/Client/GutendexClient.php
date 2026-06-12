@@ -11,9 +11,12 @@ class GutendexClient
         private readonly string $gutendexBaseUrl
     ) {}
 
+    /**
+     * @return array<string, mixed>
+     */
     public function search(string $query): array
     {
-        return $this->httpClient
+        $response = $this->httpClient
             ->request(
                 'GET',
                 $this->gutendexBaseUrl . '/books',
@@ -24,20 +27,21 @@ class GutendexClient
                 ]
             )
             ->toArray();
+
+        /** @var array<string, mixed> $response */
+        return $response;
     }
 
     /**
-     * @return array{
-     *     id:int,
-     *     title:string,
-     *     subjects:string[],
-     *     authors:array<int,array{name:string}>
-     * }
+     * @return array<string, mixed>
      */
     public function getBook(int $id): array
     {
-        return $this->httpClient
+        $response = $this->httpClient
             ->request('GET', $this->gutendexBaseUrl . '/books/' . $id)
             ->toArray();
+
+        /** @var array<string, mixed> $response */
+        return $response;
     }
 }
