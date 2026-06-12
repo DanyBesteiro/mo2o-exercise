@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\BoundedContext\Book\Application\UseCase;
 
 use App\BoundedContext\Book\Domain\Entity\Book;
