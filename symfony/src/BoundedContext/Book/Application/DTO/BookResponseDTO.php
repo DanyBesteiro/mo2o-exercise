@@ -6,6 +6,12 @@ namespace App\BoundedContext\Book\Application\DTO;
 
 use App\BoundedContext\Book\Domain\Entity\Book;
 
+use OpenApi\Attributes as OA;
+
+#[OA\Schema(
+    schema: 'Book',
+    type: 'object'
+)]
 final class BookResponseDTO
 {
     /**
@@ -13,9 +19,24 @@ final class BookResponseDTO
      * @param string[] $authors
      */
     public function __construct(
+        #[OA\Property(example: 1)]
         public int $id,
+
+        #[OA\Property(example: '1984')]
         public string $title,
+
+        #[OA\Property(
+            type: 'array',
+            items: new OA\Items(type: 'string'),
+            example: ['fiction', 'dystopia']
+        )]
         public array $subjects,
+
+        #[OA\Property(
+            type: 'array',
+            items: new OA\Items(type: 'string'),
+            example: ['George Orwell']
+        )]
         public array $authors,
     ) {}
 
