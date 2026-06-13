@@ -7,7 +7,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         'documentation' => [
             'info' => [
                 'title' => 'mo2o exercise API',
-                'description' => 'Documentación para de endpoints de la aplicación',
+                'description' => 'API endpoint documentation for the mo2o exercise project.',
                 'version' => '0.0.1',
             ],
         ],
