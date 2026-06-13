@@ -14,16 +14,14 @@ class GutendexClient
     /**
      * @return array<string, mixed>
      */
-    public function search(string $query): array
+    public function search(array $filters = []): array
     {
         $response = $this->httpClient
             ->request(
                 'GET',
                 $this->gutendexBaseUrl . '/books',
                 [
-                    'query' => [
-                        'search' => $query,
-                    ],
+                    'query' => $filters,
                 ]
             )
             ->toArray();

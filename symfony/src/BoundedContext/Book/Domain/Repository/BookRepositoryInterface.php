@@ -11,7 +11,7 @@ interface BookRepositoryInterface
     /**
      * @return Book[]
      */
-    public function search(string $query): array;
+    public function search(array $filters): array;
 
     public function findById(int $id): ?Book;
 }

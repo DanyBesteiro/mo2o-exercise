@@ -14,9 +14,9 @@ final class GutendexRepository implements BookRepositoryInterface
 {
     public function __construct(private GutendexClient $client) {}
 
-    public function search(string $query): array
+    public function search(array $filters): array
     {
-        $response = $this->client->search($query);
+        $response = $this->client->search($filters);
 
         return array_map(
             fn(array $book) => new Book(
