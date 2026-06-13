@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\BoundedContext\Book\Domain\Entity;
+namespace App\Tests\Unit\BoundedContext\Book\Domain\Entity;
 
 use App\BoundedContext\Book\Domain\Entity\Author;
 use App\BoundedContext\Book\Domain\Entity\Book;

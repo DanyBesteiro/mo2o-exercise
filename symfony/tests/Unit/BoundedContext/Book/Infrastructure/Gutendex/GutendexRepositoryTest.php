@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests\BoundedContext\Book\Infrastructure\Gutendex;
+namespace App\Tests\Unit\BoundedContext\Book\Infrastructure\Gutendex;
 
 use App\BoundedContext\Book\Domain\Entity\Book;
 use App\BoundedContext\Book\Infrastructure\Gutendex\API\Client\GutendexClient;
