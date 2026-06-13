@@ -38,7 +38,7 @@ class BookController extends AbstractController
 
         $books = $this->searchBooks->execute($filters);
 
-        if (is_null($books)) {
+        if (empty($books)) {
             return $this->json(['error' => 'Books not found'], 404);
         }
 

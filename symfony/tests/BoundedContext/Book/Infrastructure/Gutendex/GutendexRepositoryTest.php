@@ -53,7 +53,7 @@ final class GutendexRepositoryTest extends TestCase
         $client
             ->expects($this->once())
             ->method('search')
-            ->with('austen')
+            ->with(['author' => 'austen'])
             ->willReturn([
                 'results' => [
                     [
@@ -81,7 +81,7 @@ final class GutendexRepositoryTest extends TestCase
 
         $repository = new GutendexRepository($client);
 
-        $books = $repository->search('austen');
+        $books = $repository->search(['author' => 'austen']);
 
         $this->assertCount(2, $books);
 

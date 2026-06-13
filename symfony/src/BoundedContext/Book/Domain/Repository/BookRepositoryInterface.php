@@ -9,6 +9,7 @@ use App\BoundedContext\Book\Domain\Entity\Book;
 interface BookRepositoryInterface
 {
     /**
+     * @param array<string, mixed> $filters
      * @return Book[]
      */
     public function search(array $filters): array;

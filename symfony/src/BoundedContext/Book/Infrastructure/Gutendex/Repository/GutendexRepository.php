@@ -18,6 +18,9 @@ final class GutendexRepository implements BookRepositoryInterface
     {
         $response = $this->client->search($filters);
 
+        /** @var array{results: array<int, array{id: int, title: string, subjects: array<string>, authors: array<int, array{name: string}>}>} $response */
+        $results = $response['results'];
+
         return array_map(
             fn(array $book) => new Book(
                 $book['id'],
@@ -28,7 +31,7 @@ final class GutendexRepository implements BookRepositoryInterface
                     $book['authors']
                 )
             ),
-            $response['results']
+            $results
         );
     }
 

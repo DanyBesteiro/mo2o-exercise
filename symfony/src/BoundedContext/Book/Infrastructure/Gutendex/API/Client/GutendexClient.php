@@ -12,6 +12,7 @@ class GutendexClient
     ) {}
 
     /**
+     * @param array<string, mixed> $filters
      * @return array<string, mixed>
      */
     public function search(array $filters = []): array

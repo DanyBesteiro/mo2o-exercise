@@ -14,6 +14,7 @@ final class SearchBooks
     ) {}
 
     /**
+     * @param array<string, mixed> $filters
      * @return Book[]
      */
     public function execute(array $filters): array
